@@ -1,0 +1,37 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&family=Prata&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+@import "tailwindcss";
+@theme {
+  --color-primary: #f84565;
+  --color-primary-dull: #d63854;
+}
+* {
+  font-family: "Outfit", sans-serif;
+  scrollbar-width: thin;
+  scrollbar-color: #787777 #1e1e1e;
+}
+.font-playfair {
+  font-family: Playfair, Montserrat, sans-serif;
+}
+.font-prata {
+  font-family: Prata, Montserrat, sans-serif;
+}
+body {
+  color: white;
+  background-color: #09090b;
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+/* Hide spin buttons on number input */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Invert calendar picker icon */
+input::-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
