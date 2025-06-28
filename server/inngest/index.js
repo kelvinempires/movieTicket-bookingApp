@@ -1,5 +1,5 @@
 import { Inngest } from "inngest";
-import UserModel from "../models/userModel.js";
+import User from "../models/User.js";
 
 // Create a client to send and receive events
 export const inngest = new Inngest({ id: "movie-ticket-booking" });
@@ -26,7 +26,7 @@ const syncUserDeletion = inngest.createFunction(
   { event: "clerk/user.deleted" },
   async ({ event }) => {
    const {id} = event.data;
-   await UserModel.findByIdAndDelete(id);
+   await User.findByIdAndDelete(id);
   }
 );
 
