@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import "dotenv/config";
 import { serve } from "inngest/express";
+import { clerkMiddleware } from "@clerk/express";
 import { inngest, functions } from "./inngest/index.js";
 
 import connectMongoDB from "./config/database/mongodb.js";
@@ -12,6 +13,7 @@ await connectMongoDB();
 // Middleware
 app.use(express.json());
 app.use(cors());
+app.use(clerkMiddleware());
 
 
 
