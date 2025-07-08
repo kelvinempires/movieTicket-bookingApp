@@ -12,8 +12,8 @@ const syncUserFunction = inngest.createFunction(
     const {id,first_name, last_name, email_address, image_url} = event.data;
     const userData = {
       _id: id,
-      name: `${first_name} ${last_name}`,
       email: email_address[0].email_address,
+      name: first_name + ' ' + last_name,
       image: image_url,
     };
     await User.create(userData);
