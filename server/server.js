@@ -6,6 +6,7 @@ import { clerkMiddleware } from "@clerk/express";
 import { inngest, functions } from "./inngest/index.js";
 
 import connectMongoDB from "./config/database/mongodb.js";
+import ShowRouter from "./routes/showRoute.js";
 
 const app = express();
 await connectMongoDB();
@@ -21,6 +22,7 @@ app.use(clerkMiddleware());
 app.get("/", (req, res) => {res.status(200).json({ message: "MovieTicket API is running 🎬" });});
 
 app.use("/api/inngest", serve({ client: inngest, functions }));
+app.use("/api/show", ShowRouter)
 
 
 export default app;
