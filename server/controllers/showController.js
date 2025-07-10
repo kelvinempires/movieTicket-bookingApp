@@ -73,7 +73,7 @@ export const addShow = async (req, res) => {
     if (showsToCreate.length > 0) {
       await Show.insertMany(showsToCreate);
     }
-    res.json({ success: true, message: "Show added successfully." });
+    res.json({ success: true, message: "Show Added successfully." });
   } catch (error) {
     console.log(error);
     res.json({ success: false, error: error.message });
